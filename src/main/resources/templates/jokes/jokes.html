@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jokes</title>
+    <link rel="stylesheet" th:href="@{/jokes/style.css}">
+</head>
+<body>
+    <div class="container" th:each="joke : ${jokes}">
+        <div class="jokes-container">
+            <p class="joke" th:text="${joke.jokeContext}">Some joke here....</p>
+        </div>
+    </div>
+    <script th:src="@{/jokes/main.js}"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,24 @@
+body {
+    background-color: #ffebdf;
+}
+
+.container {
+    padding: 10px 80px;
+}
+
+.jokes-container {
+    background-color: red;
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: ease-in 1s;
+    cursor: pointer;
+}
+
+.jokes-container:hover {
+    background-color: rgba(220, 20, 60, 0.9);
+    transition: ease-out 1s;
+}
+
+.joke {
+    color: white;
+}
