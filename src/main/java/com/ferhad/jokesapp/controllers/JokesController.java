@@ -1,15 +1,10 @@
 package com.ferhad.jokesapp.controllers;
 
-import com.ferhad.jokesapp.model.Joke;
 import com.ferhad.jokesapp.services.JokeService;
-import com.ferhad.jokesapp.services.JokeServiceImpl;
-import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class JokesController {
@@ -20,8 +15,8 @@ public class JokesController {
     }
 
     @GetMapping("/jokes")
-    public String getJokes(Model model) {
-        model.addAttribute("jokes", jokeService.getJokes(20));
+    public String getJokes(Model model, @RequestParam(value = "n", defaultValue = "20") int n) {
+        model.addAttribute("jokes", jokeService.getJokes(n));
         return "jokes/jokes";
     }
 }
